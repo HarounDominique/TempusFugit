@@ -7,61 +7,61 @@
 
 <Pane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haroun.tempusfugit.HelloController">
    <children>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="314.0">
+    <AnchorPane layoutX="-8.0" layoutY="-8.0" minHeight="0.0" minWidth="0.0" prefHeight="535.0" prefWidth="351.0">
          <children>
-            <TextField fx:id="tufID" editable="false" layoutX="31.0" layoutY="105.0" prefHeight="33.0" prefWidth="253.0">
+            <TextField fx:id="tufID" editable="false" layoutX="31.0" layoutY="106.0" prefHeight="33.0" prefWidth="295.0">
                <font>
-                  <Font name="JetBrains Mono Italic" size="13.0" />
+                  <Font name="Consolas Italic" size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="tufWID" editable="false" layoutX="31.0" layoutY="149.0" prefHeight="33.0" prefWidth="253.0">
+            <TextField fx:id="tufWID" editable="false" layoutX="31.0" layoutY="148.0" prefHeight="33.0" prefWidth="295.0">
                <font>
-                  <Font name="JetBrains Mono Regular" size="13.0" />
+                  <Font name="Consolas" size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="tsfWID" editable="false" layoutX="31.0" layoutY="276.0" prefHeight="33.0" prefWidth="253.0">
+            <TextField fx:id="tsfWID" editable="false" layoutX="31.0" layoutY="276.0" prefHeight="33.0" prefWidth="295.0">
                <font>
-                  <Font name="JetBrains Mono Regular" size="13.0" />
+                  <Font name="Consolas" size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="tsfID" editable="false" layoutX="31.0" layoutY="232.0" prefHeight="33.0" prefWidth="253.0">
+            <TextField fx:id="tsfID" editable="false" layoutX="31.0" layoutY="228.0" prefHeight="33.0" prefWidth="295.0">
                <font>
-                  <Font name="JetBrains Mono Italic" size="13.0" />
+                  <Font name="Consolas Italic" size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="pfID" editable="false" layoutX="31.0" layoutY="364.0" prefHeight="33.0" prefWidth="253.0">
+            <TextField fx:id="pfID" editable="false" layoutX="31.0" layoutY="364.0" prefHeight="33.0" prefWidth="295.0">
                <font>
-                  <Font name="JetBrains Mono Italic" size="13.0" />
+                  <Font name="Consolas Italic" size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="pfWID" editable="false" layoutX="31.0" layoutY="408.0" prefHeight="33.0" prefWidth="253.0">
+            <TextField fx:id="pfWID" editable="false" layoutX="31.0" layoutY="408.0" prefHeight="33.0" prefWidth="295.0">
                <font>
-                  <Font name="JetBrains Mono Regular" size="13.0" />
+                  <Font name="Consolas" size="14.0" />
                </font>
             </TextField>
-            <Button fx:id="eliminateID" layoutX="113.0" layoutY="474.0" mnemonicParsing="false" onAction="#eliminateTemp" text="ELIMINATE">
+            <Button fx:id="eliminateID" layoutX="122.0" layoutY="474.0" mnemonicParsing="false" onAction="#eliminateTemp" text="ELIMINATE">
                <font>
-                  <Font name="JetBrains Mono Bold" size="13.0" />
+                  <Font name="Consolas Bold" size="18.0" />
                </font>
             </Button>
             <Label layoutX="31.0" layoutY="76.0" prefHeight="17.0" prefWidth="252.0" text="Temporary user files">
                <font>
-                  <Font name="JetBrains Mono Bold" size="16.0" />
+                  <Font name="Consolas Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="31.0" layoutY="206.0" prefHeight="17.0" prefWidth="252.0" text="Temporary system files">
+            <Label layoutX="31.0" layoutY="200.0" prefHeight="17.0" prefWidth="252.0" text="Temporary system files">
                <font>
-                  <Font name="JetBrains Mono Bold" size="16.0" />
+                  <Font name="Consolas Bold" size="18.0" />
                </font>
             </Label>
             <Label layoutX="31.0" layoutY="336.0" prefHeight="17.0" prefWidth="252.0" text="Prefetch folder">
                <font>
-                  <Font name="JetBrains Mono Bold" size="16.0" />
+                  <Font name="Consolas Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="48.0" layoutY="14.0" text="TempusFugit">
+            <Label layoutX="91.0" layoutY="22.0" text="TempusFugit">
                <font>
-                  <Font name="JetBrains Mono ExtraBold" size="33.0" />
+                  <Font name="Consolas Bold" size="28.0" />
                </font>
             </Label>
          </children>

@@ -13,13 +13,16 @@ public class HelloApplication extends Application {
     public static String tempUserFolderLocation;
     public static String tempSystemFolderLocation;
     public static String prefetchFolderLocation;
+    public static String tempUserFolderWeight;
+    public static String tempSystemFolderWeight;
+    public static String prefetchFolderWeight;
 
     private static int iterator = 0;
 
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 320, 560);
         stage.setTitle("TempusFugit");
         stage.setScene(scene);
         stage.show();
@@ -58,10 +61,13 @@ public class HelloApplication extends Application {
 
                 if(iterator==1){
                     tempUserFolderLocation = folderPath;
+                    tempUserFolderWeight = formatSize(totalSizeBytes);
                 } else if (iterator==2) {
                     tempSystemFolderLocation = folderPath;
+                    tempSystemFolderWeight = formatSize(totalSizeBytes);
                 } else if(iterator ==3){
                     prefetchFolderLocation = folderPath;
+                    prefetchFolderWeight = formatSize(totalSizeBytes);
                 }
             }
         }

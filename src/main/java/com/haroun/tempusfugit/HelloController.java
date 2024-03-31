@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import static com.haroun.tempusfugit.HelloApplication.*;
+import static com.haroun.tempusfugit.HelloApplication.prefetchFolderWeight;
 
 public class HelloController {
     @FXML
@@ -18,6 +19,15 @@ public class HelloController {
     private TextField pfID;
 
     @FXML
+    private TextField tufWID;
+
+    @FXML
+    private TextField tsfWID;
+
+    @FXML
+    private TextField pfWID;
+
+    @FXML
     private Button eliminateID;
 
     @FXML
@@ -25,5 +35,9 @@ public class HelloController {
         tufID.setText(tempUserFolderLocation);
         tsfID.setText(tempSystemFolderLocation);
         pfID.setText(prefetchFolderLocation);
+
+        tufWID.setText(tempUserFolderWeight);
+        tsfWID.setText(tempSystemFolderWeight);
+        pfWID.setText(prefetchFolderWeight);
     }
 }

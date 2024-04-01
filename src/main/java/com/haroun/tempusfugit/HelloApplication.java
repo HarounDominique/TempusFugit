@@ -4,12 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
-
-import static com.haroun.tempusfugit.HelloController.*;
-
 
 public class HelloApplication extends Application {
 
@@ -44,37 +42,41 @@ public class HelloApplication extends Application {
         };
 
         for (String folderPath : folderPaths) {
-
             counter++;
 
-            File folder = new File(folderPath);
-            if (folder.exists() && folder.isDirectory()) {
-                long totalSizeBytes = 0;
+            try {
+                File folder = new File(folderPath);
+                if (folder.exists() && folder.isDirectory()) {
+                    long totalSizeBytes = 0;
 
-                File[] files = folder.listFiles();
-                if (files != null) {
-                    for (File file : files) {
-                        totalSizeBytes += file.length();
+                    File[] files = folder.listFiles();
+                    if (files != null) {
+                        for (File file : files) {
+                            totalSizeBytes += file.length();
+                        }
+                    }
+
+                    System.out.println("Carpeta: " + folderPath);
+                    System.out.println("Tamaño ocupado: " + formatSize(totalSizeBytes));
+                    System.out.println();
+
+                    if (counter == 1) {
+                        tempUserFolderLocation = folderPath;
+                        tempUserFolderWeight = formatSize(totalSizeBytes);
+                    } else if (counter == 2) {
+                        tempSystemFolderLocation = folderPath;
+                        tempSystemFolderWeight = formatSize(totalSizeBytes);
+                    } else if (counter == 3) {
+                        prefetchFolderLocation = folderPath;
+                        prefetchFolderWeight = formatSize(totalSizeBytes);
                     }
                 }
-
-                System.out.println("Carpeta: " + folderPath);
-                System.out.println("Tamaño ocupado: " + formatSize(totalSizeBytes));
-                System.out.println();
-
-                if(counter ==1){
-                    tempUserFolderLocation = folderPath;
-                    tempUserFolderWeight = formatSize(totalSizeBytes);
-                } else if (counter ==2) {
-                    tempSystemFolderLocation = folderPath;
-                    tempSystemFolderWeight = formatSize(totalSizeBytes);
-                } else if(counter ==3){
-                    prefetchFolderLocation = folderPath;
-                    prefetchFolderWeight = formatSize(totalSizeBytes);
-                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }
+
 
     private static String formatSize(long size) {
         if (size < 1024) {
@@ -87,6 +89,18 @@ public class HelloApplication extends Application {
             return size / (1024 * 1024 * 1024) + " GB";
         } else {
             return size / (1024L * 1024 * 1024 * 1024) + " TB";
+        }
+    }
+
+    static void deleteFolderContent(String folderPath) {
+        File folder = new File(folderPath);
+        if (folder.exists() && folder.isDirectory()) {
+            try {
+                FileUtils.cleanDirectory(folder);
+                System.out.println("Contenido de la carpeta " + folderPath + " eliminado exitosamente.");
+            } catch (IOException e) {
+                System.err.println("Error al eliminar archivos de la carpeta " + folderPath + ": " + e.getMessage());
+            }
         }
     }
 }

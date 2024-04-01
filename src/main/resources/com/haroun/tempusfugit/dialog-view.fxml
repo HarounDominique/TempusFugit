@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haroun.tempusfugit.DialogViewController">
-
+<AnchorPane prefHeight="220.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haroun.tempusfugit.DialogViewController">
+   <children>
+      <Label layoutX="39.0" layoutY="50.0" text="Are you sure you want to delete the content of the folders?">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="deleteID" layoutX="122.0" layoutY="127.0" mnemonicParsing="false" onAction="#deleteButton" text="DELETE" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancelID" layoutX="383.0" layoutY="127.0" mnemonicParsing="false" onAction="#cancelButton" text="CANCEL">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

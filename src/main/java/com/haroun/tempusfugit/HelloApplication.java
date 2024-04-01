@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
+import static com.haroun.tempusfugit.HelloController.*;
+
+
 public class HelloApplication extends Application {
 
     public static String tempUserFolderLocation;
@@ -17,7 +20,7 @@ public class HelloApplication extends Application {
     public static String tempSystemFolderWeight;
     public static String prefetchFolderWeight;
 
-    private static int iterator = 0;
+    private static int counter = 0;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -42,7 +45,7 @@ public class HelloApplication extends Application {
 
         for (String folderPath : folderPaths) {
 
-            iterator++;
+            counter++;
 
             File folder = new File(folderPath);
             if (folder.exists() && folder.isDirectory()) {
@@ -59,13 +62,13 @@ public class HelloApplication extends Application {
                 System.out.println("Tamaño ocupado: " + formatSize(totalSizeBytes));
                 System.out.println();
 
-                if(iterator==1){
+                if(counter ==1){
                     tempUserFolderLocation = folderPath;
                     tempUserFolderWeight = formatSize(totalSizeBytes);
-                } else if (iterator==2) {
+                } else if (counter ==2) {
                     tempSystemFolderLocation = folderPath;
                     tempSystemFolderWeight = formatSize(totalSizeBytes);
-                } else if(iterator ==3){
+                } else if(counter ==3){
                     prefetchFolderLocation = folderPath;
                     prefetchFolderWeight = formatSize(totalSizeBytes);
                 }

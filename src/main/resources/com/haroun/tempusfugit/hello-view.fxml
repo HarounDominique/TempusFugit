@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <Pane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haroun.tempusfugit.HelloController">
    <children>
     <AnchorPane layoutX="-8.0" layoutY="-8.0" minHeight="0.0" minWidth="0.0" prefHeight="535.0" prefWidth="351.0">

@@ -1,6 +1,7 @@
 # TEMPKILLER
 
-Este proyecto es una aplicación simple escrita en Java que muestra el tamaño ocupado de las carpetas temporales del usuario y del sistema en un sistema Windows. La aplicación recorre las carpetas temporales del usuario y del sistema, así como la carpeta Windows\Prefetch, y muestra el tamaño ocupado de cada una en bytes, kilobytes, megabytes, gigabytes o terabytes, según corresponda. En el futuro se pretende ampliar funcionalidades diseñando y desarrollando una UI y añadiendo la posibilidad de eliminar el contenido de los directorios de ficheros temporales.
+Este proyecto es una aplicación simple escrita en Java que muestra el tamaño ocupado de las carpetas temporales del usuario y del sistema en un sistema Windows. La aplicación recorre las carpetas temporales del usuario y del sistema, así como la carpeta Windows\Prefetch, y muestra el tamaño ocupado de cada una en bytes, kilobytes, megabytes, gigabytes o terabytes, según corresponda. Un botón permite eliminar el contenido de estas carpetas para mayor desempeño del sistema.
+Se ha desarrollado una UI mediante JavaFX para que la experiencia de usuario sea más fluida.
 
 ## Requisitos
 

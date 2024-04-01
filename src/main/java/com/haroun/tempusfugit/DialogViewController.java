@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 import static com.haroun.tempusfugit.HelloApplication.*;
 
@@ -18,9 +18,14 @@ public class DialogViewController {
     private Button cancelID;
 
     @FXML
-    protected void cancelButton(ActionEvent event) {
+    protected void cancelButton(ActionEvent event) throws InvocationTargetException {
         Stage stage = (Stage) cancelID.getScene().getWindow();
         stage.close();
+
+        Stage parentStage = (Stage) stage.getOwner();
+        if (parentStage != null) {
+            parentStage.close();
+        }
     }
 
     @FXML

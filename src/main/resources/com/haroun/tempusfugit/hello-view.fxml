@@ -6,54 +6,54 @@
 
 <Pane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.haroun.tempusfugit.HelloController">
    <children>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="535.0" prefWidth="428.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="610.0" prefWidth="353.0">
          <children>
-            <TextField fx:id="tufID" editable="false" layoutX="31.0" layoutY="106.0" prefHeight="33.0" prefWidth="295.0">
+            <TextField fx:id="tufID" editable="false" layoutX="29.0" layoutY="166.0" prefHeight="33.0" prefWidth="295.0">
                <font>
                   <Font name="Consolas Italic" size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="tufWID" editable="false" layoutX="31.0" layoutY="148.0" prefHeight="33.0" prefWidth="295.0">
+            <TextField fx:id="tufWID" editable="false" layoutX="29.0" layoutY="208.0" prefHeight="33.0" prefWidth="295.0">
                <font>
                   <Font name="Consolas" size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="tsfWID" editable="false" layoutX="31.0" layoutY="276.0" prefHeight="33.0" prefWidth="295.0">
+            <TextField fx:id="tsfWID" editable="false" layoutX="29.0" layoutY="336.0" prefHeight="33.0" prefWidth="295.0">
                <font>
                   <Font name="Consolas" size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="tsfID" editable="false" layoutX="31.0" layoutY="228.0" prefHeight="33.0" prefWidth="295.0">
+            <TextField fx:id="tsfID" editable="false" layoutX="29.0" layoutY="288.0" prefHeight="33.0" prefWidth="295.0">
                <font>
                   <Font name="Consolas Italic" size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="pfID" editable="false" layoutX="31.0" layoutY="364.0" prefHeight="33.0" prefWidth="295.0">
+            <TextField fx:id="pfID" editable="false" layoutX="29.0" layoutY="424.0" prefHeight="33.0" prefWidth="295.0">
                <font>
                   <Font name="Consolas Italic" size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="pfWID" editable="false" layoutX="31.0" layoutY="408.0" prefHeight="33.0" prefWidth="295.0">
+            <TextField fx:id="pfWID" editable="false" layoutX="29.0" layoutY="468.0" prefHeight="33.0" prefWidth="295.0">
                <font>
                   <Font name="Consolas" size="14.0" />
                </font>
             </TextField>
-            <Button fx:id="eliminateID" layoutX="122.0" layoutY="474.0" mnemonicParsing="false" onAction="#eliminateTemp" text="ELIMINATE">
+            <Button fx:id="eliminateID" layoutX="120.0" layoutY="534.0" mnemonicParsing="false" onAction="#eliminateTemp" text="ELIMINATE">
                <font>
                   <Font name="Consolas Bold" size="18.0" />
                </font>
             </Button>
-            <Label layoutX="31.0" layoutY="76.0" prefHeight="17.0" prefWidth="252.0" text="Temporary user files">
+            <Label layoutX="29.0" layoutY="136.0" prefHeight="17.0" prefWidth="252.0" text="Temporary user files">
                <font>
                   <Font name="Consolas Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="31.0" layoutY="200.0" prefHeight="17.0" prefWidth="252.0" text="Temporary system files">
+            <Label layoutX="29.0" layoutY="260.0" prefHeight="17.0" prefWidth="252.0" text="Temporary system files">
                <font>
                   <Font name="Consolas Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="31.0" layoutY="336.0" prefHeight="17.0" prefWidth="252.0" text="Prefetch folder">
+            <Label layoutX="29.0" layoutY="396.0" prefHeight="17.0" prefWidth="252.0" text="Prefetch folder">
                <font>
                   <Font name="Consolas Bold" size="18.0" />
                </font>
@@ -63,34 +63,14 @@
                   <Font name="Consolas Bold" size="28.0" />
                </font>
             </Label>
-            <Label fx:id="userLabelID" layoutX="334.0" layoutY="148.0" prefHeight="33.0" prefWidth="80.0" text="Label">
+            <Label fx:id="diskSpaceID" layoutX="214.0" layoutY="81.0" prefHeight="33.0" prefWidth="105.0">
                <font>
-                  <Font name="Consolas" size="16.0" />
+                  <Font name="Consolas" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="334.0" layoutY="106.0" prefHeight="32.0" prefWidth="80.0" text="Label">
+            <Label layoutX="29.0" layoutY="81.0" prefHeight="32.0" prefWidth="182.0" text="Total drive space:">
                <font>
-                  <Font name="Consolas" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="334.0" layoutY="228.0" prefHeight="32.0" prefWidth="80.0" text="Label">
-               <font>
-                  <Font name="Consolas" size="16.0" />
-               </font>
-            </Label>
-            <Label fx:id="systemLabelID" layoutX="334.0" layoutY="276.0" prefHeight="32.0" prefWidth="80.0" text="Label">
-               <font>
-                  <Font name="Consolas" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="334.0" layoutY="364.0" prefHeight="32.0" prefWidth="80.0" text="Label">
-               <font>
-                  <Font name="Consolas" size="16.0" />
-               </font>
-            </Label>
-            <Label fx:id="prefetchLabelID" layoutX="334.0" layoutY="408.0" prefHeight="32.0" prefWidth="80.0" text="Label">
-               <font>
-                  <Font name="Consolas" size="16.0" />
+                  <Font name="Consolas Bold" size="18.0" />
                </font>
             </Label>
          </children>

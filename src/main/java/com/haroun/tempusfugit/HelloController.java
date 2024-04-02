@@ -35,16 +35,29 @@ public class HelloController {
     private TextField pfWID;
 
     @FXML
-    private Label userLabelID;
-
-    @FXML
-    private Label systemLabelID;
-
-    @FXML
-    private Label prefetchLabelID;
+    private Label diskSpaceID;
 
     @FXML
     private Button eliminateID;
+
+
+    public void updateFolderSizes(String userFolderSize, String systemFolderSize, String prefetchFolderSize) {
+        tufWID.setText(userFolderSize);
+        tsfWID.setText(systemFolderSize);
+        pfWID.setText(prefetchFolderSize);
+    }
+
+    public void initialize(){
+        tufID.setText(tempUserFolderLocation);
+        tsfID.setText(tempSystemFolderLocation);
+        pfID.setText(prefetchFolderLocation);
+
+        tufWID.setText(tempUserFolderWeight);
+        tsfWID.setText(tempSystemFolderWeight);
+        pfWID.setText(prefetchFolderWeight);
+
+        diskSpaceID.setText(totalSpace);
+    }
 
     @FXML
     protected void eliminateTemp(ActionEvent event) {
@@ -55,6 +68,9 @@ public class HelloController {
 
             // Obtener el controlador de la vista cargada
             DialogViewController dialogController = loader.getController();
+
+            // Establecer la referencia al controlador de la primera vista
+            dialogController.setHelloController(this);
 
             // Crear una nueva escena y configurarla con la vista cargada
             Scene scene = new Scene(root);
@@ -68,19 +84,5 @@ public class HelloController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void initialize(){
-        tufID.setText(tempUserFolderLocation);
-        tsfID.setText(tempSystemFolderLocation);
-        pfID.setText(prefetchFolderLocation);
-
-        tufWID.setText(tempUserFolderWeight);
-        tsfWID.setText(tempSystemFolderWeight);
-        pfWID.setText(prefetchFolderWeight);
-
-        userLabelID.setText(formattedUserPercentUsed+"%");
-        systemLabelID.setText(String.valueOf(systemPercentUsed)+"%");
-        prefetchLabelID.setText(String.valueOf(prefetchPercentUsed)+"%");
     }
 }

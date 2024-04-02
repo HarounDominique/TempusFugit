@@ -15,23 +15,15 @@ public class HelloApplication extends Application {
     public static String tempSystemFolderLocation;
     public static String prefetchFolderLocation;
     public static String tempUserFolderWeight;
-    public static long tempUserFolderWeightLong;
     public static String tempSystemFolderWeight;
-    public static long tempSystemFolderWeightLong;
     public static String prefetchFolderWeight;
-    public static long prefetchFolderWeightLong;
-    public static double userPercentUsed;
-    public static String formattedUserPercentUsed = String.format("%.6f", userPercentUsed);
-    public static double systemPercentUsed;
-    public static double prefetchPercentUsed;
-
-
+    public static String totalSpace;
     private static int counter = 0;
 
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 340, 560);
+        Scene scene = new Scene(fxmlLoader.load(), 355, 600);
         stage.setTitle("TempusFugit");
         stage.setScene(scene);
         stage.show();
@@ -40,12 +32,7 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
 
         File disk = new File("C:");
-        long totalSpace = disk.getTotalSpace();
-
-        // Calcular el porcentaje de espacio utilizado para cada carpeta de archivos temporales en relación al espacio en el disco C:
-        userPercentUsed = ((double) tempUserFolderWeightLong / totalSpace) * 100;
-        systemPercentUsed = ((double) tempSystemFolderWeightLong / totalSpace) * 100;
-        prefetchPercentUsed = ((double) prefetchFolderWeightLong / totalSpace) * 100;
+        totalSpace = formatSize(disk.getTotalSpace());
 
         bussinessLogic();
         launch();
@@ -80,21 +67,19 @@ public class HelloApplication extends Application {
                     if (counter == 1) {
                         tempUserFolderLocation = folderPath;
                         tempUserFolderWeight = formatSize(totalSizeBytes);
-                        tempUserFolderWeightLong = totalSizeBytes;
                     } else if (counter == 2) {
                         tempSystemFolderLocation = folderPath;
                         tempSystemFolderWeight = formatSize(totalSizeBytes);
-                        tempSystemFolderWeightLong = totalSizeBytes;
                     } else if (counter == 3) {
                         prefetchFolderLocation = folderPath;
                         prefetchFolderWeight = formatSize(totalSizeBytes);
-                        prefetchFolderWeightLong = totalSizeBytes;
                     }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+        counter = 0;
     }
 
     public class DiskSpaceChecker {

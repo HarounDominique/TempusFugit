@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.event.Event;
+import javafx.event.EventType;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -11,11 +13,18 @@ import static com.haroun.tempusfugit.HelloApplication.*;
 
 public class DialogViewController {
 
+    private HelloController helloController;
+
     @FXML
     private Button deleteID;
 
     @FXML
     private Button cancelID;
+
+    // Método para establecer la referencia al controlador de la primera vista
+    public void setHelloController(HelloController helloController) {
+        this.helloController = helloController;
+    }
 
     @FXML
     protected void cancelButton(ActionEvent event) throws InvocationTargetException {
@@ -26,6 +35,10 @@ public class DialogViewController {
         if (parentStage != null) {
             parentStage.close();
         }
+
+        bussinessLogic();
+
+        helloController.updateFolderSizes(tempUserFolderWeight, tempSystemFolderWeight, prefetchFolderWeight);
     }
 
     @FXML
@@ -36,5 +49,13 @@ public class DialogViewController {
 
         Stage stage = (Stage) cancelID.getScene().getWindow();
         stage.close();
+    }
+
+    public class ViewClosedEvent extends Event {
+        public static final EventType<ViewClosedEvent> VIEW_CLOSED_EVENT = new EventType<>(Event.ANY, "VIEW_CLOSED_EVENT");
+
+        public ViewClosedEvent() {
+            super(VIEW_CLOSED_EVENT);
+        }
     }
 }

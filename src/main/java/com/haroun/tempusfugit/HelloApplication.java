@@ -15,8 +15,11 @@ public class HelloApplication extends Application {
     public static String tempSystemFolderLocation;
     public static String prefetchFolderLocation;
     public static String tempUserFolderWeight;
+    public static long tempUserFolderWeightLong;
     public static String tempSystemFolderWeight;
+    public static long tempSystemFolderWeightLong;
     public static String prefetchFolderWeight;
+    public static long prefetchFolderWeightLong;
 
     private static int counter = 0;
 
@@ -30,6 +33,17 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+
+        File disk = new File("C:");
+        long totalSpace = disk.getTotalSpace();
+
+        // Calcular el porcentaje de espacio utilizado
+        double percentUsed = ((double) usedSpace / totalSpace) * 100;
+
+        System.out.println("Espacio total: " + formatSize(totalSpace));
+        System.out.println("Espacio utilizado: " + formatSize(usedSpace));
+        System.out.println("Porcentaje de espacio utilizado: " + String.format("%.2f", percentUsed) + "%");
+
         bussinessLogic();
         launch();
     }
@@ -63,12 +77,15 @@ public class HelloApplication extends Application {
                     if (counter == 1) {
                         tempUserFolderLocation = folderPath;
                         tempUserFolderWeight = formatSize(totalSizeBytes);
+                        tempUserFolderWeightLong = totalSizeBytes;
                     } else if (counter == 2) {
                         tempSystemFolderLocation = folderPath;
                         tempSystemFolderWeight = formatSize(totalSizeBytes);
+                        tempSystemFolderWeightLong = totalSizeBytes;
                     } else if (counter == 3) {
                         prefetchFolderLocation = folderPath;
                         prefetchFolderWeight = formatSize(totalSizeBytes);
+                        prefetchFolderWeightLong = totalSizeBytes;
                     }
                 }
             } catch (Exception e) {
@@ -77,6 +94,9 @@ public class HelloApplication extends Application {
         }
     }
 
+    public class DiskSpaceChecker {
+
+    }
 
     private static String formatSize(long size) {
         if (size < 1024) {

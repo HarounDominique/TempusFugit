@@ -47,6 +47,10 @@ public class DialogViewController {
         deleteFolderContent(System.getenv("windir") + "\\temp");
         deleteFolderContent(System.getenv("windir") + "\\Prefetch");
 
+        bussinessLogic();
+
+        helloController.updateFolderSizes(tempUserFolderWeight, tempSystemFolderWeight, prefetchFolderWeight);
+
         Stage stage = (Stage) cancelID.getScene().getWindow();
         stage.close();
     }

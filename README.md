@@ -5,15 +5,15 @@ Se ha desarrollado una UI mediante JavaFX para que la experiencia de usuario sea
 
 ##GUI
 
-###Vista principal
+###Vista principal  
 ![alt text](https://github.com/HarounDominique/TempusFugit/blob/master/images/TF1.png "First view")
 
 
-###Vista de confirmación de eliminación
+###Vista de confirmación de eliminación  
 ![alt text](https://github.com/HarounDominique/TempusFugit/blob/master/images/TF2.png "Second view")
 
 
-###Vista principal actualizada
+###Vista principal actualizada  
 ![alt text](https://github.com/HarounDominique/TempusFugit/blob/master/images/TF3.png "Updated first view")
 
 

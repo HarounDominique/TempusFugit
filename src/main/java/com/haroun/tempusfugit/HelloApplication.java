@@ -20,6 +20,11 @@ public class HelloApplication extends Application {
     public static long tempSystemFolderWeightLong;
     public static String prefetchFolderWeight;
     public static long prefetchFolderWeightLong;
+    public static double userPercentUsed;
+    public static String formattedUserPercentUsed = String.format("%.6f", userPercentUsed);
+    public static double systemPercentUsed;
+    public static double prefetchPercentUsed;
+
 
     private static int counter = 0;
 
@@ -37,12 +42,10 @@ public class HelloApplication extends Application {
         File disk = new File("C:");
         long totalSpace = disk.getTotalSpace();
 
-        // Calcular el porcentaje de espacio utilizado
-        double percentUsed = ((double) usedSpace / totalSpace) * 100;
-
-        System.out.println("Espacio total: " + formatSize(totalSpace));
-        System.out.println("Espacio utilizado: " + formatSize(usedSpace));
-        System.out.println("Porcentaje de espacio utilizado: " + String.format("%.2f", percentUsed) + "%");
+        // Calcular el porcentaje de espacio utilizado para cada carpeta de archivos temporales en relación al espacio en el disco C:
+        userPercentUsed = ((double) tempUserFolderWeightLong / totalSpace) * 100;
+        systemPercentUsed = ((double) tempSystemFolderWeightLong / totalSpace) * 100;
+        prefetchPercentUsed = ((double) prefetchFolderWeightLong / totalSpace) * 100;
 
         bussinessLogic();
         launch();

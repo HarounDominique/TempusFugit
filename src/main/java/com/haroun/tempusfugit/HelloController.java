@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -32,6 +33,15 @@ public class HelloController {
 
     @FXML
     private TextField pfWID;
+
+    @FXML
+    private Label userLabelID;
+
+    @FXML
+    private Label systemLabelID;
+
+    @FXML
+    private Label prefetchLabelID;
 
     @FXML
     private Button eliminateID;
@@ -68,5 +78,9 @@ public class HelloController {
         tufWID.setText(tempUserFolderWeight);
         tsfWID.setText(tempSystemFolderWeight);
         pfWID.setText(prefetchFolderWeight);
+
+        userLabelID.setText(formattedUserPercentUsed+"%");
+        systemLabelID.setText(String.valueOf(systemPercentUsed)+"%");
+        prefetchLabelID.setText(String.valueOf(prefetchPercentUsed)+"%");
     }
 }
